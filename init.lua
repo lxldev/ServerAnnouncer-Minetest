@@ -5,10 +5,10 @@ minetest.register_globalstep(function(dtime)
     time_passed = time_passed + dtime
     if time_passed >= 10 then  -- Changes the message however seconds has passed. example. 10
         local messages = {
-            "[SERVER] Welcome!",
-            "[SERVER] Please enjoy your stay",
-            "[SERVER] See someone breaking the rules? Report them!",
-            "[SERVER] Please thank the owner and all of our staff team"
+            "[SERVER] Welcome!", -- Change to whatever you want. include something like [SERVER] so users know its the server.
+            "[SERVER] Please enjoy your stay", -- Change to whatever you want. include something like [SERVER] so users know its the server.
+            "[SERVER] See someone breaking the rules? Report them!", -- Change to whatever you want. include something like [SERVER] so users know its the server.
+            "[SERVER] Please thank the owner and all of our staff team" -- Change to whatever you want. include something like [SERVER] so users know its the server.
         }
         local msg = messages[math.random(#messages)]  -- Select a random message.
         minetest.chat_send_all(msg)
