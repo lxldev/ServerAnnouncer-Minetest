@@ -3,7 +3,7 @@ minetest.register_globalstep(function(dtime)
     -- Broadcast different messages randomly after a certain amount of time
     local time_passed = 0
     time_passed = time_passed + dtime
-    if time_passed >= 10 then  -- Changes the message however seconds has passed. example. 10
+    if time_passed >= 300 then  -- Changes the message however seconds has passed. Currently 5 minutes
         local messages = {
             "[SERVER] Welcome!", -- Change to whatever you want. include something like [SERVER] so users know its the server.
             "[SERVER] Please enjoy your stay", -- Change to whatever you want. include something like [SERVER] so users know its the server.
