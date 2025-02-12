@@ -1,17 +1,16 @@
+local time_passed = 0  -- Declare it outside the function so it persists.
+
 minetest.register_globalstep(function(dtime)
-    -- dtime: The time (in seconds) since the last global step.
-    -- Broadcast different messages randomly after a certain amount of time
-    local time_passed = 0
-    time_passed = time_passed + dtime
-    if time_passed >= 300 then  -- Changes the message however seconds has passed. Currently 5 minutes
+    time_passed = time_passed + dtime  -- Accumulate time
+    if time_passed >= 300 then  -- 5 minutes
         local messages = {
-            "[SERVER] Welcome!", -- Change to whatever you want. include something like [SERVER] so users know its the server.
-            "[SERVER] Please enjoy your stay", -- Change to whatever you want. include something like [SERVER] so users know its the server.
-            "[SERVER] See someone breaking the rules? Report them!", -- Change to whatever you want. include something like [SERVER] so users know its the server.
-            "[SERVER] Please thank the owner and all of our staff team" -- Change to whatever you want. include something like [SERVER] so users know its the server.
+            "[SERVER] Welcome",
+            "[SERVER] Read the rules please",
+            "[SERVER] Have fun",
+            "[SERVER] Thank you for playing"
         }
         local msg = messages[math.random(#messages)]  -- Select a random message.
         minetest.chat_send_all(msg)
-        time_passed = 0  -- This function resets the timer.
+        time_passed = 0  -- Reset the timer
     end
 end)
